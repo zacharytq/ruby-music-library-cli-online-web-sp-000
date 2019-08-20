@@ -31,4 +31,10 @@ class MusicLibraryController
       puts name
     end
   end
+
+  def list_artists
+    list = Artist.all.sort {|a, b| a.name <=> b.name}
+    counter = 0
+    list.each {|artist| puts "#{counter+=1}. #{artist.name}"}
+  end
 end
