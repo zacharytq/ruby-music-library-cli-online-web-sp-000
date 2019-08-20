@@ -37,4 +37,10 @@ class MusicLibraryController
     counter = 0
     list.each {|artist| puts "#{counter+=1}. #{artist.name}"}
   end
+
+  def list_genres
+    list = Genre.all.sort {|a, b| a.name <=> b.name}
+    counter = 0
+    list.each {|genre| puts "#{counter+=1}. #{genre.name}"}
+  end
 end
