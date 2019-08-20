@@ -21,4 +21,10 @@ class MusicLibraryController
       holder = gets
     end
   end
+
+  def list_songs
+    list = Song.all.sort {|a, b| a.name <=> b.name}
+    counter = 0
+    list.each {|song| puts "#{counter}. #{song}"}
+  end
 end
