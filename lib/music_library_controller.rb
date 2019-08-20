@@ -65,4 +65,7 @@ class MusicLibraryController
       a.each {|i| puts "#{counter+=1}. #{i.artist.name} - #{i.name}"}
     end
   end
+
+  def play_song
+  end
 end
