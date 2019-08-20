@@ -62,7 +62,7 @@ class MusicLibraryController
       genre = Genre.find_by_name(response)
       a = genre.songs.sort {|i, x| i.name <=> x.name}
       counter = 0
-      a.each {|i| puts "#{counter+=1}. #{i.name} - #{i.genre.name}"}
+      a.each {|i| puts "#{counter+=1}. #{i.artist.name} - #{i.name}"}
     end
   end
 end
