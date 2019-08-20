@@ -43,4 +43,12 @@ class MusicLibraryController
     counter = 0
     list.each {|genre| puts "#{counter+=1}. #{genre.name}"}
   end
+
+  def list_songs_by_artist
+    puts "Please enter the name of an artist:"
+    response = gets
+    artist = Artist.all.detect {|a| a.name == response}
+    counter = 0
+    artist.songs.each {|i| puts "#{counter+=1}. #{i.name}"}
+  end
 end
