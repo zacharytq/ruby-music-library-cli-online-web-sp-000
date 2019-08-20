@@ -54,4 +54,15 @@ class MusicLibraryController
       a.each {|i| puts "#{counter+=1}. #{i.name} - #{i.genre.name}"}
     end
   end
+
+  def list_songs_by_genre
+    puts "Please enter the name of an genre:"
+    response = gets
+    if Genre.all.any? {|i| i.name == response}
+      genre = Genre.find_by_name(response)
+      a = genre.songs.sort {|i, x| i.name <=> x.name}
+      counter = 0
+      a.each {|i| puts "#{counter+=1}. #{i.name} - #{i.genre.name}"}
+    end
+  end
 end
