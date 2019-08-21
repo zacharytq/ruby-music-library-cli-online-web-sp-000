@@ -1,3 +1,5 @@
+require 'pry'
+
 class Song
   attr_accessor :name
   attr_reader :artist, :genre
@@ -46,6 +48,18 @@ class Song
     if song == nil
       song = Song.create(name)
     end
+    song
+  end
+
+  def self.create_from_filename(file)
+    self.new_from_filename(file)
+  end
+
+  def self.new_from_filename(file)
+    holder = file.delete_suffix(".mp3").split(" - ")
+    song = Song.create(holder[1])
+    song.artist = Artist.find_or_create_by_name(holder[0])
+    song.genre = Genre.find_or_create_by_name(holder[2])
     song
   end
 
