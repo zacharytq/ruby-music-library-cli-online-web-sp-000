@@ -22,6 +22,12 @@ class MusicLibraryController
       case holder
       when "list songs"
         self.list_songs
+      when "list artists"
+        self.list_artists
+      when "list_genres"
+        self.list_genres
+      when "play song"
+        self.play_song
       end
     end
   end
